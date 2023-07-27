@@ -11,6 +11,14 @@ spring:
     locations: classpath:db/migration
     user: ${spring.r2dbc.username}
     password: ${spring.r2dbc.password}
+  boot:
+    admin:
+      client:
+        instance:
+          service-host-type: ip
+        url: http://${DATASOURCE_HOST:localhost}:8081
+  application:
+    name: auth-service
 
 jwt:
   password:
@@ -27,3 +35,9 @@ logging:
     web: TRACE
   org.springframework:
     web: TRACE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

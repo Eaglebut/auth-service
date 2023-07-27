@@ -23,7 +23,7 @@ import ru.eaglebut.authservice.security.JwtHandler;
 public class WebSecurityConfig {
 
 	private final String[] publicRoutes = {"/api/v1/auth/register", "/api/v1/auth/login", "/swagger-ui/**",
-		"/v3/api-docs/**", "/swagger-ui.html", "/webjars/swagger-ui/**"};
+		"/v3/api-docs/**", "/swagger-ui.html", "/webjars/swagger-ui/**", "/actuator/**"};
 	@Value("${jwt.secret}")
 	private String secret;
 
